@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ritikgupt/Certificates/issues"
   },
-  "homepage": "https://github.com/ritikgupt/Certificates#readme"
+  "homepage": "https://github.com/ritikgupt/Certificates#readme",
+  "dependencies": {
+    "compression": "^1.7.4"
+  }
 }
