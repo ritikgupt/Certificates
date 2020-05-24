@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('verify');
+    res.status(200).render('verify');
   });
   router.post('/', (req, res) => {
     Participant.findOne({email: req.body.email}, (err,participant) => {
