@@ -2,10 +2,10 @@ var Participant=require('../models/participant')
 var express = require('express');
 var router = express.Router();
 
-router.get('/verify', (req, res) => {
+router.get('/', (req, res) => {
     res.status(200).render('verify');
   });
-  router.post('/verify', (req, res) => {
+  router.post('/', (req, res) => {
     Participant.findOne({email: req.body.email}, (err,participant) => {
         console.log(participant)
       if (err)
