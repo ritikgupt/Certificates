@@ -21,6 +21,9 @@ connection.once('open', () => {
 var certificateRoutes=require('./routes/certificate');
 var participantRoutes=require('./routes/participant');
 app.use(certificateRoutes);
+app.get('/', (req, res) => {
+  res.render('verify');
+});
 app.use(participantRoutes);
 app.listen(port, () => {
     console.log('Server has started.');
