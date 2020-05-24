@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ritikgupt/Certificates#readme",
   "dependencies": {
-    "compression": "^1.7.4"
+    "compression": "^1.7.4",
+    "http-errors": "^1.7.3"
   }
 }
