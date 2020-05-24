@@ -1,4 +1,3 @@
-var Certificate = require('../models/certificate');
 var Participant=require('../models/participant')
 var express = require('express');
 var router = express.Router();
@@ -13,6 +12,8 @@ router.get('/verify', (req, res) => {
       {
         res.send('not found');}
       else {
+          if(participant==null)
+          res.send('not found')
           console.log('hello');
         res.render('certificate',{participant:participant})
       }

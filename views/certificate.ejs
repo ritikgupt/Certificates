@@ -4,15 +4,19 @@
 <head>
   <title>AMZ Certificate</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">     
+    <script src= 
+"https://files.codepedia.info/files/uploads/iScripts/html2canvas.js"> 
+    </script> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  
 </head>
-<body>
-    <div class="content">
+<div id="html-content-holder" style="background-color: #F0F0F1";  
+ class="content">
         <div class="head">
             <div class="headers">
                 <img src="amzlogo.png" style="float: left">
@@ -65,10 +69,48 @@
 
         </div>
     </div>
-    <div class="text-center" style="padding: 20px;">
-        <button class="btn btn-danger"><i class="fa fa-download" style="color: aliceblue;"></i> Download</button>
-    </div>
-  
 
-</body>
+    <input id="btn-Preview-Image" type="button"
+                value="Preview" />  
+    <div class="text-center" style="padding: 20px;">
+        <a id="btn-Convert-Html2Image" href="#"> 
+            Download 
+        </a> 
+    </div>
+    <br/> 
+      
+    <h3>Preview :</h3> 
+      
+    <div id="previewImage"></div> 
 </html>
+<script>
+    $(document).ready(function() { 
+          
+          // Global variable 
+          var element = $("#html-content-holder");  
+        
+          // Global variable 
+          var getCanvas;  
+          $("#btn-Preview-Image").on('click', function() { 
+                html2canvas(element, { 
+                    onrendered: function(canvas) { 
+                        $("#previewImage").append(canvas); 
+                        getCanvas = canvas; 
+                    } 
+                }); 
+            }); 
+$("#btn-Convert-Html2Image").on('click', function() { 
+                var imgageData =  
+                    getCanvas.toDataURL("image/png"); 
+              
+                // Now browser starts downloading  
+                // it instead of just showing it 
+                var newData = imgageData.replace( 
+                /^data:image\/png/, "data:application/octet-stream"); 
+              
+                $("#btn-Convert-Html2Image").attr( 
+                "download", "certificate.png").attr( 
+                "href", newData); 
+            }); 
+        }); 
+</script>
