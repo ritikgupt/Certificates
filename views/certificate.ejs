@@ -72,16 +72,18 @@
 
     <input id="btn-Preview-Image" type="button"
                 value="Preview" />  
-    <div class="text-center" style="padding: 20px;">
-        <a id="btn-Convert-Html2Image" href="#"> 
-            Download 
-        </a> 
-    </div>
+   
     <br/> 
       
     <h3>Preview :</h3> 
       
-    <div id="previewImage"></div> 
+    <div id="previewImage">
+        <div class="text-center" style="padding: 20px;">
+            <a id="btn-Convert-Html2Image" href="#"> 
+                Download 
+            </a> 
+        </div>
+    </div> 
 </html>
 <script>
     $(document).ready(function() { 
@@ -98,6 +100,17 @@
                         getCanvas = canvas; 
                     } 
                 }); 
+                var imgageData =  
+                    getCanvas.toDataURL("image/png"); 
+              
+                // Now browser starts downloading  
+                // it instead of just showing it 
+                var newData = imgageData.replace( 
+                /^data:image\/png/, "data:application/octet-stream"); 
+              
+                $("#btn-Convert-Html2Image").attr( 
+                "download", "certificate.png").attr( 
+                "href", newData); 
             }); 
 $("#btn-Convert-Html2Image").on('click', function() { 
                 var imgageData =  

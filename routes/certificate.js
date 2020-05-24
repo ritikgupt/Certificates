@@ -10,10 +10,10 @@ router.get('/verify', (req, res) => {
         console.log(participant)
       if (err)
       {
-        res.send('not found');}
+        res.render('error')}
       else {
           if(participant==null)
-          res.send('not found')
+          res.render('error')
           console.log('hello');
         res.render('certificate',{participant:participant})
       }
