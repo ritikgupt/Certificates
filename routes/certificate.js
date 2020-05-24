@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', (req, res) => {
-    res.status(200).render('verify');
+    res.render('verify');
   });
   router.post('/', (req, res) => {
     Participant.findOne({email: req.body.email}, (err,participant) => {
@@ -19,9 +19,4 @@ router.get('/', (req, res) => {
       }
     });
   });
-// router.get('/certificate',async(req,res)=>{
-//     res.render('certificate')
-// })
-
-
 module.exports=router;
