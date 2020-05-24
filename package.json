@@ -18,6 +18,10 @@
   "homepage": "https://github.com/ritikgupt/Certificates#readme",
   "dependencies": {
     "compression": "^1.7.4",
-    "http-errors": "^1.7.3"
+    "csv2json": "^2.0.2",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "json2csv": "^5.0.1",
+    "mongoose": "^5.9.15"
   }
 }
