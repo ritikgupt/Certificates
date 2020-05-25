@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +16,16 @@
 </head>
 <div id="html-content-holder" style="background-color: #F0F0F1";  
  class="content">
-        <div class="head">
+ <div class="head row">
             <div class="headers">
-                <img src="amzlogo.png" style="float: left">
-                <img src="rcdc2019.png" style="float: right">
+                <img src="amzlogo.png" style="float: left;width: 20vw;" >
+                <img src="rcdc2019.png" style="float: right;width:20vw;">
             </div>
 
         </div>
 
-        <div class="middle">
-            <div class="title text-center">
+        <div class="middle row">
+            <div class="title text-center"  style="width: auto;">
                 <div class="text">
                         <h1>Certificate</h1>
                         <h2>of Participation</h2>
@@ -52,10 +51,10 @@
 
         </div>
         
-        <div class="lowerImage">
-                <div class="lower">
-                        <img src="director.png" style="float: left;margin-left: 40px;">
-                        <img src="badge.png" style="float: right;margin-right: 40px;">
+        <div class="lowerImage row">
+                <div class="lower row">
+                        <img src="director.png" style="float: left;margin-left: 40px;width: 25vw">
+                        <img src="badge.png" style="float: right;margin-right: 40px;width: 15vw">
                 </div>
         </div>
         
@@ -63,27 +62,25 @@
             <hr class="new1">
         </div>
 
-        <div class="footer text-center">
-            
-            <img src="footer.png" style="align-content: center;">
+        <div class="footer text-center container">
+            <div class="col-xs-12 col-md-"> 
+            <img src="footer.png" style="align-content: center;width:100%;">
 
         </div>
     </div>
-
+</div>
     <input id="btn-Preview-Image" type="button"
                 value="Preview" />  
-   
+    <div class="text-center" style="padding: 20px;">
+        <a id="btn-Convert-Html2Image" href="#"> 
+            Download 
+        </a> 
+    </div>
     <br/> 
       
     <h3>Preview :</h3> 
       
-    <div id="previewImage">
-        <div class="text-center" style="padding: 20px;">
-            <a id="btn-Convert-Html2Image" href="#"> 
-                Download 
-            </a> 
-        </div>
-    </div> 
+    <div id="previewImage"></div> 
 </html>
 <script>
     $(document).ready(function() { 
@@ -100,17 +97,6 @@
                         getCanvas = canvas; 
                     } 
                 }); 
-                var imgageData =  
-                    getCanvas.toDataURL("image/png"); 
-              
-                // Now browser starts downloading  
-                // it instead of just showing it 
-                var newData = imgageData.replace( 
-                /^data:image\/png/, "data:application/octet-stream"); 
-              
-                $("#btn-Convert-Html2Image").attr( 
-                "download", "certificate.png").attr( 
-                "href", newData); 
             }); 
 $("#btn-Convert-Html2Image").on('click', function() { 
                 var imgageData =  

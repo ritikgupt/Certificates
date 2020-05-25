@@ -7,16 +7,21 @@ router.get('/', (req, res) => {
   });
   router.post('/', (req, res) => {
     Participant.findOne({email: req.body.email}, (err,participant) => {
-        console.log(participant)
       if (err)
       {
-        res.render('error')}
+        res.render('error');}
       else {
           if(participant==null)
           res.render('error')
-          console.log('hello');
+          else{
         res.render('certificate',{participant:participant})
+          }
       }
     });
   });
+// router.get('/certificate',async(req,res)=>{
+//     res.render('certificate')
+// })
+
+
 module.exports=router;

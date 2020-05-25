@@ -1,15 +1,17 @@
-     
 .title
 {
     text-align: center;
 }
+
+
 
 .content
 {
     padding: 20px;
     border: 4px solid red;
     margin: 10px;
-    height: 810px;
+    height: auto;
+    width: auto;
 }
 
 .middle
@@ -20,20 +22,20 @@
 
 h1
 {
-    font-size: 75px;
+    font-size: 8vw;
     text-transform: uppercase;
     font-family: c;
-    letter-spacing: 1px;
-    margin-top: -5px;
+    letter-spacing: 0.4vw;
+    margin-top: -20px;
 }
 h2
 {
-    font-size: 35px;
+    font-size: 4vw;
     text-transform: uppercase;
     font-family:c;
-    letter-spacing: 1px;
+    letter-spacing: 0.2vw;
     padding: 1px;
-    margin-top: -6px;
+    margin-top: -8px;
 }
 
 
@@ -73,16 +75,18 @@ h2
 .txt
 {
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 19px;
+    font-family:c;
     color: white;
     font-weight: 800;
-    width: 590px;
+    width: auto;
     letter-spacing: 1px;
     padding-left: -2px;
     margin: auto;
     align-content: center;
     background: red;
     padding: 4px;
+    display: inline-block;
 }
 
 
@@ -92,7 +96,7 @@ h2
 }
 .new1
 {
-    margin-top: 155px;
+    margin-top: 15px;
     border-top: 1.5px solid brown; 
     margin-left: -20px;
     margin-right: -20px;
@@ -100,7 +104,4 @@ h2
 body
 {
     color: red;
-}
-#btn-Preview-Image{
-    margin-left:46%;
 }

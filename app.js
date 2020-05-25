@@ -1,5 +1,6 @@
 var compression=require('compression');
 var createError=require('http-errors');
+
 var a=require('express');
 var mongoose=require('mongoose');
 var port = process.env.PORT || 5000;
@@ -22,6 +23,9 @@ var certificateRoutes=require('./routes/certificate');
 var participantRoutes=require('./routes/participant');
 app.use(certificateRoutes);
 app.use(participantRoutes);
+app.get('*',async(req,res)=>{
+  res.render('error');
+})
 app.listen(port, () => {
     console.log('Server has started.');
   });
