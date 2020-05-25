@@ -69,11 +69,9 @@
         </div>
     </div>
 </div>
-    <input id="btn-Preview-Image" type="button"
-                value="Preview" />  
     <div class="text-center" style="padding: 20px;">
-        <a id="btn-Convert-Html2Image" href="#"> 
-            Download 
+        <a class="btn btn-danger" id="btn-Convert-Html2Image" href="#"> 
+            <i class="fa fa-download" style="color: aliceblue;"></i>Download 
         </a> 
     </div>
     <br/> 
@@ -90,15 +88,13 @@
         
           // Global variable 
           var getCanvas;  
-          $("#btn-Preview-Image").on('click', function() { 
-                html2canvas(element, { 
+$("#btn-Convert-Html2Image").on('click', function() { 
+    html2canvas(element, { 
                     onrendered: function(canvas) { 
                         $("#previewImage").append(canvas); 
                         getCanvas = canvas; 
                     } 
                 }); 
-            }); 
-$("#btn-Convert-Html2Image").on('click', function() { 
                 var imgageData =  
                     getCanvas.toDataURL("image/png"); 
               
