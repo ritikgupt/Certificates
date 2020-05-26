@@ -9,10 +9,10 @@ router.get('/', (req, res) => {
     Participant.findOne({email: req.body.email}, (err,participant) => {
       if (err)
       {
-        res.render('error');}
+        res.render('incorrect');}
       else {
           if(participant==null)
-          res.render('error')
+          res.render('incorrect')
           else{
         res.render('certificate',{participant:participant})
           }
