@@ -71,14 +71,10 @@
 </div>
     <div class="text-center" style="padding: 20px;">
         <a class="btn btn-danger" id="btn-Convert-Html2Image" href="#"> 
-            <i class="fa fa-download" style="color: aliceblue;"></i>Download 
+            <i class="fa fa-download" style="color: aliceblue;"></i> Double Click To Download 
         </a> 
     </div>
-    <br/> 
-      
-    <h3>Preview :</h3> 
-      
-    <div id="previewImage"></div> 
+    <br/>  
 </html>
 <script>
     $(document).ready(function() { 
@@ -90,22 +86,20 @@
           var getCanvas;  
 $("#btn-Convert-Html2Image").on('click', function() { 
     html2canvas(element, { 
-                    onrendered: function(canvas) { 
-                        $("#previewImage").append(canvas); 
-                        getCanvas = canvas; 
-                    } 
-                }); 
-                var imgageData =  
-                    getCanvas.toDataURL("image/png"); 
-              
-                // Now browser starts downloading  
-                // it instead of just showing it 
+                    onrendered: function(canvas) {  
+                        var imgageData =  
+                    canvas.toDataURL("image/png"); 
                 var newData = imgageData.replace( 
                 /^data:image\/png/, "data:application/octet-stream"); 
               
                 $("#btn-Convert-Html2Image").attr( 
                 "download", "certificate.png").attr( 
                 "href", newData); 
+                    }
+                })
             }); 
+                     
+                
+               
         }); 
 </script>
